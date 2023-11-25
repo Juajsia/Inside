@@ -20,7 +20,7 @@ use bd_Inside;
 create table persona(
 	cedula INT NOT NULL UNIQUE primary key,
     correo VARCHAR(100) NOT NULL UNIQUE,
-    contraseña VARCHAR(255) NOT NULL,
+    contrasenia VARCHAR(255) NOT NULL,
     primerNombre VARCHAR(30) NOT NULL,
     segundoNombre VARCHAR(30) NULL,
     primerApellido VARCHAR(30) NOT NULL,
@@ -38,7 +38,7 @@ create table empleado(
 
 create table vehiculo(
 	placa VARCHAR(10) NOT NULL UNIQUE primary key,
-    cedulaDueño INT NOT NULL UNIQUE
+    cedulaDuenio INT NOT NULL UNIQUE
 );
 
 create table noticia (
@@ -68,7 +68,7 @@ create table persona_movimiento(
 --------------------------------------------------------------------------------
 alter table empleado add foreign key (cedula) references persona(cedula);
 
-alter table vehiculo add foreign key (cedulaDueño) references persona(cedula);
+alter table vehiculo add foreign key (cedulaDuenio) references persona(cedula);
 
 alter table movimiento add foreign key (placa) references vehiculo(placa);
 

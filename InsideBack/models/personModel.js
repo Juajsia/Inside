@@ -17,12 +17,6 @@ try {
   throw new Error('error connecting')
 }
 
-try {
-  connection = await mysql.createConnection(connectionString)
-} catch (error) {
-  throw new Error('error connecting')
-}
-
 export class PersonModel {
   static async getAll () {
     try {

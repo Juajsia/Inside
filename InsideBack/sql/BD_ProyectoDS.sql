@@ -76,3 +76,5 @@ alter table persona_movimiento add(
 	foreign key (cedulaPersona) references persona(cedula),
     foreign key (idMovimiento) references movimiento(id)
 );
+
+insert into persona values(1234, 'admin@gmail.com', '$2b$12$4NJy10lNK4DkUO25Ym1zVewPzZcgRtsfeOQomct5RLnAETh74Idea', 'Juan', 'Adams', 'Buitrago', 'Gonzales', "4444", 'Administrador');

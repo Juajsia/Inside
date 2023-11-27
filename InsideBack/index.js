@@ -1,6 +1,9 @@
 import express from 'express'
 import 'dotenv/config'
 
+import { validateToken } from './middlewares/validateToken.js'
+import { validateRolToken } from './middlewares/validateRolToken.js'
+
 // routers
 import { createPersonRouter } from './routes/personRouter.js'
 import { createEmpleadoRouter } from './routes/empleadoRouter.js'
@@ -19,10 +22,10 @@ const app = express()
 app.use(express.json())
 
 app.use('/api/person', createPersonRouter({ PersonModel }))
-app.use('/api/empleado', createEmpleadoRouter({ EmpleadoModel }))
-app.use('/api/vehiculo', createVehiculoRouter({ VehiculoModel }))
-app.use('/api/movimiento', createMovimientoRouter({ MovimientoModel }))
-app.use('/api/noticia', createNoticiaRouter({ NoticiaModel }))
+app.use('/api/empleado', validateToken, validateRolToken(['Administrador']), createEmpleadoRouter({ EmpleadoModel }))
+app.use('/api/vehiculo', validateToken, validateRolToken(['Administrador']), createVehiculoRouter({ VehiculoModel }))
+app.use('/api/movimiento', validateToken, validateRolToken(['Administrador', 'Vigilante']), createMovimientoRouter({ MovimientoModel }))
+app.use('/api/noticia', validateToken, validateRolToken(['Administrador']), createNoticiaRouter({ NoticiaModel }))
 
 const PORT = 1234 ?? process.env.PORT
 app.listen(PORT, () => {

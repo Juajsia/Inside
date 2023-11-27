@@ -1,5 +1,6 @@
 import mysql from 'mysql2/promise'
 import bcrypt from 'bcrypt'
+import jwt from 'jsonwebtoken'
 
 const DEFAULT_CONFIG = {
   host: 'localhost',
@@ -101,4 +102,33 @@ export class PersonModel {
       }
     }
   }
+
+  static async login ({ data }) {
+    const { correo, contrasenia } = data
+    try {
+      const [user] = await connection.query('select correo, contrasenia, rol from persona where correo = ?;', [correo])
+      if (user.length === 0) {
+        return {
+          typeErr: 1,
+          err: 'Error en correo/contraseña'
+        }
+      }
+      const eq = await bcrypt.compare(contrasenia, user[0].contrasenia)
+      if (!eq) {
+        return { err: 'Error en usuario/contraseña' }
+      }
+      const token = createToken({ data: { Usuario: correo, Rol: user[0].rol } })
+      return { succes: 'Login Correcto', token, Rol: user[0].rol }
+    } catch (error) {
+
+    }
+  }
+}
+
+function createToken ({ data }) {
+  const payLoad = {
+    Usuario: data.Usuario,
+    Rol: data.Rol
+  }
+  return jwt.sign(payLoad, process.env.SECRET_KEY)
 }

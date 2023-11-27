@@ -1,0 +1,17 @@
+<section>
+    <article>
+        <div class="from-container">
+            <h1>Iniciar Sesión</h1>
+            <form id="form">
+                <label for="user">Correo:</label>
+                <input type="email" [(ngModel)]="correo" name="user" id="user">
+                <label for="password">Password:</label>
+                <input type="password" [(ngModel)]="Contrasenia" name="password" id="password">
+                <button type="button" (click)="login()">Enviar</button>
+                @if (Error != '') {
+                <p id="error" class="error">{{Error}}</p>
+                }
+            </form>
+        </div>
+    </article>
+</section>

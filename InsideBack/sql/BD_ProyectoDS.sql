@@ -76,4 +76,3 @@ alter table persona_movimiento add(
 	foreign key (cedulaPersona) references persona(cedula),
     foreign key (idMovimiento) references movimiento(id)
 );
-

@@ -26,7 +26,7 @@ export class LoginComponent {
       next: (data) => {
         localStorage.setItem('token', data.token)
         localStorage.setItem('rol', data.Rol)
-        this.router.navigate([''])
+        this.router.navigate(['noticias'])
       },
       error: (e: HttpErrorResponse) => {
         this.Error = 'Contraseña o correo Erroneos'

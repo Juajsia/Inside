@@ -72,11 +72,11 @@ export class PersonModel {
         return { err: 'Persona no está Registrada' }
       } else {
         await connection.query('delete from Persona where cedula = ?', [id])
-        return { msg: 'Peronsa eliminada con exito' }
+        return { msg: 'Persona eliminada con exito' }
       }
     } catch (error) {
       return {
-        err: 'error eliminando Peronsa',
+        err: 'error eliminando Persona',
         mgs: error.message
       }
     }

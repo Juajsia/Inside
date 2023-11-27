@@ -1,0 +1,30 @@
+
+
+#profile{
+    border-bottom: 1px solid black;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: white;
+    height: 20%;
+    
+}
+
+
+/*PROFILE*/
+ #profile #photo{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+box-sizing: border-box;
+width: 50%;
+
+}
+
+#profile #photo img{
+    width: 60px;
+    height: 65px;
+}
+
+

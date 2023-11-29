@@ -1,18 +1,6 @@
 section {
-    --s: 34px; /* control the size (the circle diameter) */
-    --c1: #ECBE13;
-    --c2: #1b3039;
-    
-    --_g: radial-gradient(calc(var(--s)/2),var(--c1) 97%,#0000);
-    background:
-      var(--_g),var(--_g) calc(2*var(--s)) calc(2*var(--s)),
-      repeating-conic-gradient(from 45deg,#0000 0 25%,var(--c2) 0 50%) calc(-.707*var(--s)) calc(-.707*var(--s)),
-      repeating-linear-gradient(135deg,var(--c1) calc(var(--s)/-2) calc(var(--s)/2),var(--c2) 0 calc(2.328*var(--s)));
-    background-size: calc(4*var(--s)) calc(4*var(--s));
-    /* 
-      0.707 = sqrt(2)/2
-      2.328 = 2*sqrt(2) - .5
-    */
+    background: rgb(187,187,166);
+    background: linear-gradient(180deg, rgba(187,187,166,1) 0%, rgba(223,220,213,1) 35%, rgba(55,80,135,1) 100%);
 }
 
 h1 {
@@ -34,7 +22,7 @@ section {
 
 .from-container {
     width: 400px;
-    background-color: #f7f7f7;
+    background-color: #f7f7f73d;
     border-radius: 10px;
     padding: 20px;
     text-align: center;
@@ -70,13 +58,14 @@ button {
 input {
     border-bottom: 1px solid #4e4f5183;
     border-radius: 0px;
+    background-color: transparent;
 }
 
 button {
     padding: 10px 20px;
     border-radius: 5px;
     margin: 20px 0;
-    background-color: #1b3039;
+    background-color: #273F5E;
     color: #ffff;
     border-color: #ffff;
     font-size: 14px;
@@ -86,7 +75,7 @@ button {
 }
 
 button:hover {
-    background-color: #ffbc03;
+    background-color: #162931;
     color: #ffff;
     border-color: #ffff;
     transform: scale(1.05);

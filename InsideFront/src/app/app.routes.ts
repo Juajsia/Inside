@@ -1,9 +1,8 @@
 import { Routes } from '@angular/router';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { NoticiaComponent } from './pages/noticia/noticia.component';
 import { LoginComponent } from './pages/login/login.component';
 import { loginGuard, rolAdmin } from './guards/login.guard';
+import { EmpleadoComponent } from './pages/empleado/empleado.component';
 
 export const routes: Routes = [{
     title: 'Login',
@@ -14,4 +13,10 @@ export const routes: Routes = [{
     path: 'noticias',
     component: NoticiaComponent,
     canActivate: [loginGuard, rolAdmin]
-}];
+},{
+    title: 'Empleado',
+    path: 'empleados',
+    component: EmpleadoComponent,
+    canActivate: [loginGuard, rolAdmin]
+}
+];

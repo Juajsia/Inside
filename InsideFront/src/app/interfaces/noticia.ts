@@ -1,7 +1,7 @@
 export interface Noticia {
-    id: number,
+    id?: number,
     titulo: string,
     linkImg: string,
     descripcion: string,
-    fechaPublicacion: string
+    fechaPublicacion?: string
 }

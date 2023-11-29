@@ -7,24 +7,11 @@
         <section class="acciones">
             <h2 id="titulo">Noticias Activas</h2>
             <div>
-                @if (listNoticias.length !== 0 && !buscar) {
-                <button class="btn" (click)="Buscar()"><fa-icon [icon]="lupa"></fa-icon> Buscar</button>
-                }
                 <button class="btn" (click)="mostrarForm(0)" id="add"><fa-icon [icon]="faPlus"></fa-icon> Publicar
                     Noticia</button>
             </div>
         </section>
-        @if (buscar) {
-        <section class="busqueda">
-            <!-- Nota: Funciones de filtrado removidas -->
-            <form action="" id="form-buscar">
-                <input type="text" name="nombre" class="params" placeholder="Ingrese el nombre">
-                <input type="number" name="cedula" class="params" placeholder="Ingrese la cedula del dueño">
-                <button class="btn" type="button"><fa-icon [icon]="lupa"></fa-icon>
-                    Buscar</button>
-            </form>
-        </section>
-        }
+
         @if (listNoticias.length !== 0) {
         <section class="contenido">
             <table>

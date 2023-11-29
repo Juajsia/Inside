@@ -4,6 +4,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NoticiaComponent } from './pages/noticia/noticia.component';
 import { LoginComponent } from './pages/login/login.component';
 import { loginGuard, rolAdmin } from './guards/login.guard';
+import { FormularioNoticiaComponent } from './components/formulario-noticia/formulario-noticia.component';
 
 export const routes: Routes = [{
     title: 'Login',
@@ -13,5 +14,10 @@ export const routes: Routes = [{
     title: 'Noticia',
     path: 'noticias',
     component: NoticiaComponent,
+    canActivate: [loginGuard, rolAdmin]
+},{
+    title: 'FomularioNoticia',
+    path: 'noticias/formulario/:id',
+    component: FormularioNoticiaComponent,
     canActivate: [loginGuard, rolAdmin]
 }];

@@ -45,8 +45,9 @@ export class NoticiaComponent {
   }
 
   mostrarForm(id: number){
-    //this.router.navigate([`Noticia/formulario/${id}`])
+    this.router.navigate([`noticias/formulario/${id}`])
   }
+  
   eliminarNoticia(id:number, Titulo: string) {
     this._NoticiaService.deleteNoticia(id).subscribe(() => {
       this.getNoticias()

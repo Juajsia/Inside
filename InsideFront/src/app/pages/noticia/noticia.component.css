@@ -34,6 +34,8 @@ th {
 
 .ultTd {
     border-right: 2px solid #969faa70;
+    max-width: 600px;
+    overflow: auto;
 }
 
 .imgNoticia {

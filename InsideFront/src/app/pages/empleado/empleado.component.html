@@ -1,1 +1,69 @@
-<p>empleado works!</p>
+<app-navbar></app-navbar>
+
+<div class="container">
+    <div class="menu"><app-menulateral></app-menulateral></div>
+
+    <main class="contenido">
+        <section class="acciones">
+            <h2 id="titulo">Empleados</h2>
+            <div>
+                @if (listEmpleado.length !== 0 && !buscar) {
+                <button class="btn" (click)="Buscar()"><fa-icon [icon]="lupa"></fa-icon> Buscar</button>
+                }
+                <button class="btn" (click)="mostrarForm(0)" id="add"><fa-icon [icon]="faPlus"></fa-icon> Publicar
+                    Noticia</button>
+            </div>
+        </section>
+        @if (buscar) {
+        <section class="busqueda">
+            <!-- Nota: Funciones de filtrado removidas -->
+            <form action="" id="form-buscar">
+                <!-- <input type="text" name="nombre" class="params" placeholder="Ingrese el nombre"> -->
+                <input [(ngModel)]="filtarCed" type="number" name="cedula" class="params"
+                    placeholder="Ingrese la cedula del dueño">
+                <button (click)="filtrarEmpleado()" class="btn" type="button"><fa-icon [icon]="lupa"></fa-icon>
+                    Buscar</button>
+            </form>
+        </section>
+        }
+        @if (listEmpleado.length !== 0) {
+        <section class="contenido">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Cedula</th>
+                        <th>Rol</th>
+                        <th>Observaciones</th>
+                        <th>Dirección</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (item of listEmpleado; track item.cedula) {
+                    <tr>
+                        <td>{{item.nombre}}</td>
+                        <td>{{item.cedula}}</td>
+                        <td>{{item.rol}}</td>
+                        <td>{{item.observaciones}}</td>
+                        <td class="ultTd">{{item.direccion}}</td>
+
+                        <div class="btns">
+                            <button class="Edit" (click)="mostrarForm(item.cedula!)">
+                                <fa-icon [icon]="faPenToSquare"></fa-icon> Editar
+                            </button>
+                            <!-- Nota: funcion eliminar removida -->
+                            <button class="Delete" (click)="eliminarEmpleado(item.cedula!, item.nombre!)">
+                                <fa-icon [icon]="faTrash"></fa-icon> Eliminar
+                            </button>
+                        </div>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </section>
+        }@else {
+        <h3>No hay Empleados Registrados</h3>
+        }
+
+    </main>
+</div>

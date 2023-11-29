@@ -19,7 +19,7 @@ try {
 export class EmpleadoModel {
   static async getAll () {
     try {
-      const [empleados] = await connection.query('select * from empleado;')
+      const [empleados] = await connection.query('select concat(p.primerNombre, \' \',p.segundoNombre, \' \', p.primerApellido, \' \', p.segundoApellido) nombre, p.cedula, e.rol, e.observaciones, e.direccion from empleado e inner join persona p on p.cedula = e.cedula;')
       if (empleados.length === 0) {
         return { msg: 'No hay Empelados Registrados' }
       }
@@ -31,7 +31,7 @@ export class EmpleadoModel {
 
   static async getById ({ id }) {
     try {
-      const [empleado] = await connection.query('select * from empleado where cedula = ?;', [id])
+      const [empleado] = await connection.query('select concat(p.primerNombre, \' \',p.segundoNombre, \' \', p.primerApellido, \' \', p.segundoApellido) nombre, p.cedula, e.rol, e.observaciones, e.direccion from empleado e inner join persona p on p.cedula = e.cedula where e.cedula = ?;', [id])
       if (empleado.length === 0) {
         return {
           typeErr: 1,

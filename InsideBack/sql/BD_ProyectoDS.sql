@@ -78,3 +78,10 @@ alter table persona_movimiento add(
 );
 
 insert into persona values(1234, 'admin@gmail.com', '$2b$12$4NJy10lNK4DkUO25Ym1zVewPzZcgRtsfeOQomct5RLnAETh74Idea', 'Juan', 'Adams', 'Buitrago', 'Gonzales', "4444", 'Administrador');
+insert into persona values(4321, 'Juan1@gmail.com', '$2b$12$4NJy10lNK4DkUO25Ym1zVewPzZcgRtsfeOQomct5RLnAETh74Idea', 'Juan', 'Jose', 'Estrada', 'Velez', "4441", 'Empleado');
+insert into persona values(1111, 'pablo@gmail.com', '$2b$12$4NJy10lNK4DkUO25Ym1zVewPzZcgRtsfeOQomct5RLnAETh74Idea', 'Juan', 'Adams', 'Buitrago', 'Gonzales', "5555", 'Empleado');
+insert into persona values(2222, 'isac@gmail.com', '$2b$12$4NJy10lNK4DkUO25Ym1zVewPzZcgRtsfeOQomct5RLnAETh74Idea', 'Juan', 'Adams', 'Buitrago', 'Gonzales', "7777", 'Empleado');
+
+insert into empleado values(4321, 'Aseeador', '*', 'calle falsa 1234');
+insert into empleado values(1111, 'Vigilante', 'Habla mucho', 'calle real 1111');
+insert into empleado values(2222, 'Portero', 'turno nocturno', 'carrera 1234 numero 5');

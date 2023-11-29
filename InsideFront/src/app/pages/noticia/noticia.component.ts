@@ -54,39 +54,4 @@ export class NoticiaComponent {
     })
   }
 
-  // filtarNombre: string = ''
-  // filtarCed: string = ''
-  // filtrarNoticia(): void{
-  //   const filteredListNoticia: Noticia[] = []
-  //   if(this.filtarCed === '' && this.filtarNombre === ''){
-  //     this.getNoticias()
-  //   }
-  //   if (this.filtarCed !== '' && this.filtarNombre === '') {
-  //     this.listNoticias.forEach(item => {
-  //       if(String(item.IdDuenio) == this.filtarCed){
-  //         filteredListNoticia.push(item)
-  //       }
-  //     });
-  //     this.listNoticias = filteredListNoticia
-  //   }
-  //   if (this.filtarCed === '' && this.filtarNombre !== '') {
-  //     this.listNoticias.forEach(item => {
-  //       if(item.Nombre == this.filtarNombre){
-  //         filteredListNoticia.push(item)
-  //       }
-  //     });
-  //     this.listNoticias = filteredListNoticia
-  //   }
-  //   if (this.filtarCed !== '' && this.filtarNombre !== '') {
-  //     this.listNoticias.forEach(item => {
-  //       if(item.Nombre == this.filtarNombre && String(item.IdDuenio) == this.filtarCed){
-  //         filteredListNoticia.push(item)
-  //       }
-  //     });
-  //     this.listNoticias = filteredListNoticia
-  //   }
-  //   this.filtarNombre = ''
-  //   this.filtarCed = ''
-  //   return
-  // }
 }

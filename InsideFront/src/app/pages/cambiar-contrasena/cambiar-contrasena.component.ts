@@ -45,12 +45,8 @@ export class CambiarContrasenaComponent {
       return false 
     }
     const regrex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
-    if (!regrex.test(this.contrasenia)) {
-      this.Error = 'Ingresar una contraseña Válida'
-      return false
-    }
     if (!regrex.test(this.nuevaContrasenia)) {
-      this.Error = 'Ingresar una nueva contraseña Válida'
+      this.Error = 'La nueva contraseña debe tener almenos una letra, un número, un caracter especial y una longitud mínima de 8 caracteres'
       return false
     }
     if (this.nuevaContrasenia !== this.confirmarContrasenia) {

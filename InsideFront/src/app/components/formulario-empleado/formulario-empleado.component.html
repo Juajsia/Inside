@@ -62,7 +62,7 @@
                         <span>*Campo requerido*</span>
                         }
                         <label for="telefono" class="form-input">Telefono:</label>
-                        <input formControlName="telefono" type="number" id="telefono" class="form-input"
+                        <input formControlName="telefono" type="text" id="telefono" class="form-input"
                             placeholder="Ingrese el Telefono" required>
                         @if (form.get('telefono')?.hasError('required') &&
                         form.get('telefono')?.touched) {

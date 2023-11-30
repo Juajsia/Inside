@@ -4,7 +4,7 @@ const personSchema = z.object({
   cedula: z.number().int().positive(),
   correo: z.string(),
   contrasenia: z.string(),
-  newContrasenia: z.string(),
+  newContrasenia: z.string().optional(),
   primerNombre: z.string(),
   segundoNombre: z.string().nullable(),
   primerApellido: z.string(),

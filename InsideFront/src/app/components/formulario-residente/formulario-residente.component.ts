@@ -25,7 +25,7 @@ export class FormularioResidenteComponent {
   textRegex = /^[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ\s]+$/
   mailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
   passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
-  cedRegex = /^[0-9]\d{7,9}$/
+  cedRegex = /^[0-9]\d{7,10}$/
   telRegex = /^\d{10}$/
 
   form =  new FormGroup({
@@ -67,7 +67,7 @@ export class FormularioResidenteComponent {
       segundoApellido: this.form.value.segundoApellido!,
       cedula: Number(this.form.value.cedula!),
       telefono: this.form.value.telefono!,
-      rol: 'Empleado',
+      rol: 'Residente',
       correo: this.form.value.correo!,
       contrasenia: this.form.value.contrasenia!
     }

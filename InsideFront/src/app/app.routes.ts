@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { NoticiaComponent } from './pages/noticia/noticia.component';
 import { LoginComponent } from './pages/login/login.component';
-import { loginGuard, rolAdmin, rolVigilante } from './guards/login.guard';
+import { login, loginGuard, rolAdmin, rolVigilante } from './guards/login.guard';
 import { FormularioNoticiaComponent } from './components/formulario-noticia/formulario-noticia.component';
 import { EmpleadoComponent } from './pages/empleado/empleado.component';
 import { FormularioEmpleadoComponent } from './components/formulario-empleado/formulario-empleado.component';
@@ -12,7 +12,8 @@ import { FormularioResidenteComponent } from './components/formulario-residente/
 export const routes: Routes = [{
     title: 'Login',
     path: '',
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate: [login]
 },{
     title: 'Noticia',
     path: 'noticias',

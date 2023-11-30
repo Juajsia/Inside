@@ -27,7 +27,11 @@ export class LoginComponent {
         localStorage.setItem('token', data.token)
         localStorage.setItem('rol', data.Rol)
         localStorage.setItem('nombre', data.Nombre + ' ' + data.Apellido)
-        this.router.navigate(['noticias'])
+        if (data.Rol === 'Administrador') {
+          this.router.navigate(['noticias'])
+        } else {
+          this.router.navigate(['residentes'])
+        }
       },
       error: (e: HttpErrorResponse) => {
         this.Error = 'Contraseña o correo Erroneos'

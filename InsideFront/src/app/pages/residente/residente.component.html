@@ -10,8 +10,10 @@
                 @if (listResidentes.length !== 0 && !buscar) {
                 <button class="btn" (click)="Buscar()"><fa-icon [icon]="lupa"></fa-icon> Buscar</button>
                 }
+                @if (rol === 'Administrador') {
                 <button class="btn" (click)="mostrarForm(0)" id="add"><fa-icon [icon]="faPlus"></fa-icon> Agregar
                     Residente</button>
+                }
             </div>
         </section>
         @if (buscar) {
@@ -49,6 +51,7 @@
                         <td>{{item.apartamento}}</td>
                         <td class="ultTd">{{item.telefono}}</td>
 
+                        @if (rol === 'Administrador') {
                         <div class="btns">
                             <button class="Edit" (click)="mostrarForm(item.cedula!)">
                                 <fa-icon [icon]="faPenToSquare"></fa-icon> Editar
@@ -58,6 +61,7 @@
                                 <fa-icon [icon]="faTrash"></fa-icon> Eliminar
                             </button>
                         </div>
+                        }
                     </tr>
                     }
                 </tbody>

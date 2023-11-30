@@ -59,7 +59,7 @@ export class EmpleadoModel {
         return { msg: `Empleado ${cedula} registrado con exito` }
       }
     } catch (error) {
-      return { err: 'Error creando Empleado' }
+      return { err: 'Error creando Empleado', msg: error.message }
     }
   }
 

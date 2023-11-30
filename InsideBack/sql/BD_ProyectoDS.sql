@@ -18,7 +18,7 @@ use bd_Inside;
 /*Declaración de las Tablas*/
 --------------------------------------------------------------------------------
 create table persona(
-	cedula INT NOT NULL UNIQUE primary key,
+	cedula BIGINT UNSIGNED NOT NULL UNIQUE primary key,
     correo VARCHAR(100) NOT NULL UNIQUE,
     contrasenia VARCHAR(255) NOT NULL,
     primerNombre VARCHAR(30) NOT NULL,

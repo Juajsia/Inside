@@ -62,7 +62,7 @@ export class PersonModel {
         return { msg: `usuario ${primerNombre} registrado con exito` }
       }
     } catch (error) {
-      return { err: 'Error creando Persona' }
+      return { err: 'Error creando Persona', msg: error.message }
     }
   }
 
@@ -106,7 +106,7 @@ export class PersonModel {
   static async login ({ data }) {
     const { correo, contrasenia } = data
     try {
-      const [user] = await connection.query('select correo, contrasenia, rol from persona where correo = ?;', [correo])
+      const [user] = await connection.query('select correo, contrasenia, rol, primerNombre, primerApellido from persona where correo = ?;', [correo])
       if (user.length === 0) {
         return {
           typeErr: 1,
@@ -118,7 +118,7 @@ export class PersonModel {
         return { err: 'Error en usuario/contraseña' }
       }
       const token = createToken({ data: { Usuario: correo, Rol: user[0].rol } })
-      return { succes: 'Login Correcto', token, Rol: user[0].rol }
+      return { succes: 'Login Correcto', token, Rol: user[0].rol, Nombre: user[0].primerNombre, Apellido: user[0].primerApellido }
     } catch (error) {
 
     }

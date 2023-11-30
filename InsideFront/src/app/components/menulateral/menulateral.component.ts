@@ -28,6 +28,7 @@ export class MenulateralComponent {
   cerrarSesion(){
     localStorage.removeItem('token')
     localStorage.removeItem('rol')
+    localStorage.removeItem('nombre')
     this.router.navigate([''])
   }
 }

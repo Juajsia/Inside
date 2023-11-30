@@ -13,4 +13,6 @@ import { faUser} from '@fortawesome/free-solid-svg-icons';
 })
 export class NavbarComponent {
   user = faUser
+  rol = localStorage.getItem('rol')
+  nombre = localStorage.getItem('nombre')
 }

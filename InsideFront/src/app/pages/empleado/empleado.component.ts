@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { MenulateralComponent } from '../../components/menulateral/menulateral.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faTrash, faPenToSquare, faPlus, faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faPenToSquare, faPlus, faMagnifyingGlass, faXmark} from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Empleado } from '../../interfaces/empleado';
@@ -22,6 +22,7 @@ export class EmpleadoComponent {
   faPenToSquare = faPenToSquare
   faPlus = faPlus
   lupa = faMagnifyingGlass
+  cerrar = faXmark
   buscar = false
   listEmpleado: Empleado[] = []
   copilist: Empleado[] = []
@@ -48,7 +49,7 @@ export class EmpleadoComponent {
   }
 
   mostrarForm(id: number){
-    //this.router.navigate([`Empleado/formulario/${id}`])
+    this.router.navigate([`empleados/formulario/${id}`])
   }
 
   eliminarEmpleado(id:number, nombre: string) {

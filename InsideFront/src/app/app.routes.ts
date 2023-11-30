@@ -4,6 +4,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { loginGuard, rolAdmin } from './guards/login.guard';
 import { FormularioNoticiaComponent } from './components/formulario-noticia/formulario-noticia.component';
 import { EmpleadoComponent } from './pages/empleado/empleado.component';
+import { FormularioEmpleadoComponent } from './components/formulario-empleado/formulario-empleado.component';
 
 export const routes: Routes = [{
     title: 'Login',
@@ -23,6 +24,11 @@ export const routes: Routes = [{
     title: 'Empleado',
     path: 'empleados',
     component: EmpleadoComponent,
+    canActivate: [loginGuard, rolAdmin]
+},{
+    title: 'FomularioEmpleado',
+    path: 'empleados/formulario/:id',
+    component: FormularioEmpleadoComponent,
     canActivate: [loginGuard, rolAdmin]
 }
 ];

@@ -1,6 +1,8 @@
 <div id="sidemenu" class="menu-collapsed">
 
   <div id="menu-items">
+
+    @if (rol === 'Administrador') {
     <div class="item">
       <a routerLink="/noticias">
         <div class="icon"></div>
@@ -13,6 +15,7 @@
     </div>
 
     <div class="item separator"></div>
+    }
 
     <div class="item">
       <a routerLink="/residentes">
@@ -27,6 +30,7 @@
 
     <div class="item separator"></div>
 
+    @if (rol === 'Administrador') {
     <div class="item">
       <a routerLink="/empleados">
         @if (router.url === '/empleados') {
@@ -39,6 +43,8 @@
     </div>
 
     <div class="item separator"></div>
+    }
+
 
     <div class="item">
       <a routerLink="/historial">

@@ -20,6 +20,7 @@ export class MenulateralComponent {
   historial = faClockRotateLeft
   configuracion = faGear
   close = faArrowRightToBracket
+  rol = localStorage.getItem('rol')
 
   constructor(){
     console.log(this.router.url)

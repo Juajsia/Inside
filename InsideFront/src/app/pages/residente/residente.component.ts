@@ -27,6 +27,7 @@ export class ResidenteComponent {
   listResidentes: Residente[] = []
   copilist: Residente[] = []
   private router: Router = inject(Router)
+  rol = localStorage.getItem('rol')
 
   constructor(private _ResidenteService: ResidenteService, private toastr: ToastrService){
     this.getResidentes()

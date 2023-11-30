@@ -32,3 +32,18 @@ export const rolAdmin = () => {
         return false
     }
 }
+
+export const login = ():boolean => {
+    const router = inject(Router)
+    if (!localStorage.getItem('token')) {
+        return true
+    } else {
+        const rol = localStorage.getItem('rol')
+        if (rol === 'Administrador') {
+            router.navigate(['noticias'])
+        } else {
+            router.navigate(['residentes'])
+        }
+        return false
+    }
+}

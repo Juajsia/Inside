@@ -26,6 +26,7 @@ export class HistorialComponent {
   listMovimientos: Movimiento[] = []
   copilist: Movimiento[] = []
   private router: Router = inject(Router)
+  rol = localStorage.getItem('rol')
 
   constructor(private _MovimientoService: MovimientoService, private toastr: ToastrService){
     this.getMovimientos()

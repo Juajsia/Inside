@@ -39,12 +39,14 @@
                         <td>{{item.placa}}</td>
                         <td class="ultTd">{{item.tipo}}</td>
 
+                        @if (rol === 'Administrador') {
                         <div class="btns">
                             <!-- Nota: funcion eliminar removida -->
                             <button class="Delete" (click)="eliminarMovimiento(item.id!)">
                                 <fa-icon [icon]="faTrash"></fa-icon> Eliminar
                             </button>
                         </div>
+                        }
                     </tr>
                     }
                 </tbody>

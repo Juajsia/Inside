@@ -8,6 +8,7 @@ import { FormularioEmpleadoComponent } from './components/formulario-empleado/fo
 import { ResidenteComponent } from './pages/residente/residente.component';
 import { HistorialComponent } from './pages/historial/historial.component';
 import { FormularioResidenteComponent } from './components/formulario-residente/formulario-residente.component';
+import { CambiarContrasenaComponent } from './pages/cambiar-contrasena/cambiar-contrasena.component';
 
 export const routes: Routes = [{
     title: 'Login',
@@ -49,5 +50,9 @@ export const routes: Routes = [{
     path: 'historial',
     component: HistorialComponent,
     canActivate: [loginGuard, rolVigilante]
+},{
+    title: 'CambiarContraseña',
+    path: 'cambiarContrasenia',
+    component: CambiarContrasenaComponent
 }
 ];

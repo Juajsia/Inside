@@ -16,4 +16,14 @@ export class CredencialesService {
    login(user: any): Observable<any>{
     return this.http.post<any>(`${this.myAppUrl}${this.myApiUrl}/login`, user)
    }
+
+   updateContrasenia(Contrasenia: Contrasenia): Observable<void>{
+    return this.http.patch<void>(`${this.myAppUrl}${this.myApiUrl}/login/change`, Contrasenia)
+   }
+}
+
+interface Contrasenia {
+  correo: string,
+  contrasenia: string,
+  newContrasenia: string,
 }

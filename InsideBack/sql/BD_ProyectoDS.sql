@@ -88,17 +88,42 @@ alter table persona_movimiento add(
 insert into persona values(1234, 'admin@gmail.com', '$2b$12$4NJy10lNK4DkUO25Ym1zVewPzZcgRtsfeOQomct5RLnAETh74Idea', 'Juan', 'Adams', 'Buitrago', 'Gonzales', "4444", 'Administrador');
 
 insert into persona values(4321, 'Juan1@gmail.com', '$2b$12$4NJy10lNK4DkUO25Ym1zVewPzZcgRtsfeOQomct5RLnAETh74Idea', 'Juan', 'Jose', 'Estrada', 'Velez', "4441", 'Empleado');
-insert into persona values(1111, 'pablo@gmail.com', '$2b$12$4NJy10lNK4DkUO25Ym1zVewPzZcgRtsfeOQomct5RLnAETh74Idea', 'Juan', 'Adams', 'Buitrago', 'Gonzales', "5555", 'Empleado');
-insert into persona values(2222, 'isac@gmail.com', '$2b$12$4NJy10lNK4DkUO25Ym1zVewPzZcgRtsfeOQomct5RLnAETh74Idea', 'Juan', 'Adams', 'Buitrago', 'Gonzales', "7777", 'Empleado');
+insert into persona values(1111, 'pablo@gmail.com', '$2b$12$4NJy10lNK4DkUO25Ym1zVewPzZcgRtsfeOQomct5RLnAETh74Idea', 'Lina', 'Marcela', 'Gonzalez', 'Gil', "5555", 'Empleado');
+insert into persona values(2222, 'isac@gmail.com', '$2b$12$4NJy10lNK4DkUO25Ym1zVewPzZcgRtsfeOQomct5RLnAETh74Idea', 'Gustavo', 'Francisco', 'Petro', 'Urrego', "7777", 'Empleado');
 
-insert into empleado values(4321, 'Aseeador', '*', 'calle falsa 1234');
+insert into empleado values(4321, 'Aseador', '*', 'calle falsa 1234');
 insert into empleado values(1111, 'Vigilante', 'Habla mucho', 'calle real 1111');
 insert into empleado values(2222, 'Portero', 'turno nocturno', 'carrera 1234 numero 5');
 
-insert into persona values(9898, 'Juan1fake@gmail.com', '$2b$12$4NJy10lNK4DkUO25Ym1zVewPzZcgRtsfeOQomct5RLnAETh74Idea', 'Juan', 'Jose', 'Estrada', 'Velez', "4441", 'Residente');
-insert into persona values(5543, 'pablofake@gmail.com', '$2b$12$4NJy10lNK4DkUO25Ym1zVewPzZcgRtsfeOQomct5RLnAETh74Idea', 'Juan', 'Adams', 'Buitrago', 'Gonzales', "5555", 'Residente');
-insert into persona values(8888, 'isacfake@gmail.com', '$2b$12$4NJy10lNK4DkUO25Ym1zVewPzZcgRtsfeOQomct5RLnAETh74Idea', 'Juan', 'Adams', 'Buitrago', 'Gonzales', "7777", 'Residente');
+insert into persona values(9898, 'Juan1fake@gmail.com', '$2b$12$4NJy10lNK4DkUO25Ym1zVewPzZcgRtsfeOQomct5RLnAETh74Idea', 'Juan', 'Pedro', 'Marulanda', 'Garcia', "4441", 'Residente');
+insert into persona values(5543, 'pablofake@gmail.com', '$2b$12$4NJy10lNK4DkUO25Ym1zVewPzZcgRtsfeOQomct5RLnAETh74Idea', 'Alberto', 'Adolfo', 'Hernandez', 'Gonzales', "5555", 'Residente');
+insert into persona values(8888, 'isacfake@gmail.com', '$2b$12$4NJy10lNK4DkUO25Ym1zVewPzZcgRtsfeOQomct5RLnAETh74Idea', 'Arnulfo', '', 'Perez', 'Gutierrez', "7777", 'Residente');
 
 insert into Residente values(9898, 'A-401', 'Torre 1');
 insert into Residente values(5543, 'B-502', 'Torre 3');
 insert into Residente values(8888, 'B-505', 'Torre 5');
+
+insert into noticia (titulo, linkImg, descripcion, fechaPublicacion) values('Jornada de fumigación', 'https://theressa.net/images/articles/61cfa330e5ec4-fumigacion-saneamiento-ambiental-1200x600.jpg', 
+'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis, dui vel porta mollis, ligula justo gravida', STR_TO_DATE('2023-11-26 18:06:00', '%Y-%m-%d %H:%i:%s'));
+insert into noticia (titulo, linkImg, descripcion, fechaPublicacion) values('Jueves de meditación', 'https://www.webconsultas.com/sites/default/files/styles/wch_image_schema/public/temas/yoga.jpg', 
+'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis, dui vel porta mollis, ligula justo gravida', STR_TO_DATE('2023-11-27 12:30:00', '%Y-%m-%d %H:%i:%s'));
+insert into noticia (titulo, linkImg, descripcion, fechaPublicacion) values('Mantenimiento zonas deportivas', 'https://www.cimelsa.com/wp-content/uploads/2021/12/Instalaciones-deportivas.jpg', 
+'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis, dui vel porta mollis, ligula justo gravida', STR_TO_DATE('2023-11-15 10:25:00', '%Y-%m-%d %H:%i:%s'));
+
+insert into vehiculo values('acb-123', '4321');
+insert into vehiculo values('yrg-764', '8888');
+insert into vehiculo values('nfy-679', '9898');
+
+insert into movimiento (fecha, porteria, tipo, placa) values(STR_TO_DATE('2023-11-26 20:06:00', '%Y-%m-%d %H:%i:%s'), 'sur', 'S', 'yrg-764');
+insert into movimiento (fecha, porteria, tipo, placa) values(STR_TO_DATE('2023-11-28 13:04:00', '%Y-%m-%d %H:%i:%s'), 'sur', 'E', null);
+insert into movimiento (fecha, porteria, tipo, placa) values(STR_TO_DATE('2023-11-23 11:11:00', '%Y-%m-%d %H:%i:%s'), 'sur', 'S', 'nfy-679');
+insert into movimiento (fecha, porteria, tipo, placa) values(STR_TO_DATE('2023-11-23 23:17:00', '%Y-%m-%d %H:%i:%s'), 'sur', 'E', null);
+insert into movimiento (fecha, porteria, tipo, placa) values(STR_TO_DATE('2023-11-23 18:22:00', '%Y-%m-%d %H:%i:%s'), 'sur', 'S', null);
+insert into movimiento (fecha, porteria, tipo, placa) values(STR_TO_DATE('2023-11-23 12:43:00', '%Y-%m-%d %H:%i:%s'), 'sur', 'E', null);
+
+insert into persona_movimiento values('4321','1');
+insert into persona_movimiento values('8888','2');
+insert into persona_movimiento values('9898','3');
+insert into persona_movimiento values('1111','4');
+insert into persona_movimiento values('2222','5');
+insert into persona_movimiento values('5543','6');

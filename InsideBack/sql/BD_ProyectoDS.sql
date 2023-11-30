@@ -40,7 +40,7 @@ create table residente(
 	cedula INT NOT NULL UNIQUE primary key,
     apartamento varchar(20) NULL,
     torre VARCHAR(30) NULL
-);
+);	
 
 create table vehiculo(
 	placa VARCHAR(10) NOT NULL UNIQUE primary key,
@@ -86,6 +86,7 @@ alter table persona_movimiento add(
 );
 
 insert into persona values(1234, 'admin@gmail.com', '$2b$12$4NJy10lNK4DkUO25Ym1zVewPzZcgRtsfeOQomct5RLnAETh74Idea', 'Juan', 'Adams', 'Buitrago', 'Gonzales', "4444", 'Administrador');
+
 insert into persona values(4321, 'Juan1@gmail.com', '$2b$12$4NJy10lNK4DkUO25Ym1zVewPzZcgRtsfeOQomct5RLnAETh74Idea', 'Juan', 'Jose', 'Estrada', 'Velez', "4441", 'Empleado');
 insert into persona values(1111, 'pablo@gmail.com', '$2b$12$4NJy10lNK4DkUO25Ym1zVewPzZcgRtsfeOQomct5RLnAETh74Idea', 'Juan', 'Adams', 'Buitrago', 'Gonzales', "5555", 'Empleado');
 insert into persona values(2222, 'isac@gmail.com', '$2b$12$4NJy10lNK4DkUO25Ym1zVewPzZcgRtsfeOQomct5RLnAETh74Idea', 'Juan', 'Adams', 'Buitrago', 'Gonzales', "7777", 'Empleado');
@@ -93,3 +94,11 @@ insert into persona values(2222, 'isac@gmail.com', '$2b$12$4NJy10lNK4DkUO25Ym1zV
 insert into empleado values(4321, 'Aseeador', '*', 'calle falsa 1234');
 insert into empleado values(1111, 'Vigilante', 'Habla mucho', 'calle real 1111');
 insert into empleado values(2222, 'Portero', 'turno nocturno', 'carrera 1234 numero 5');
+
+insert into persona values(9898, 'Juan1fake@gmail.com', '$2b$12$4NJy10lNK4DkUO25Ym1zVewPzZcgRtsfeOQomct5RLnAETh74Idea', 'Juan', 'Jose', 'Estrada', 'Velez', "4441", 'Residente');
+insert into persona values(5543, 'pablofake@gmail.com', '$2b$12$4NJy10lNK4DkUO25Ym1zVewPzZcgRtsfeOQomct5RLnAETh74Idea', 'Juan', 'Adams', 'Buitrago', 'Gonzales', "5555", 'Residente');
+insert into persona values(8888, 'isacfake@gmail.com', '$2b$12$4NJy10lNK4DkUO25Ym1zVewPzZcgRtsfeOQomct5RLnAETh74Idea', 'Juan', 'Adams', 'Buitrago', 'Gonzales', "7777", 'Residente');
+
+insert into Residente values(9898, 'A-401', 'Torre 1');
+insert into Residente values(5543, 'B-502', 'Torre 3');
+insert into Residente values(8888, 'B-505', 'Torre 5');

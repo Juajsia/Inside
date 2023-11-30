@@ -5,6 +5,7 @@ import { loginGuard, rolAdmin, rolVigilante } from './guards/login.guard';
 import { FormularioNoticiaComponent } from './components/formulario-noticia/formulario-noticia.component';
 import { EmpleadoComponent } from './pages/empleado/empleado.component';
 import { ResidenteComponent } from './pages/residente/residente.component';
+import { HistorialComponent } from './pages/historial/historial.component';
 
 export const routes: Routes = [{
     title: 'Login',
@@ -30,6 +31,12 @@ export const routes: Routes = [{
     title: 'Residente',
     path: 'residentes',
     component: ResidenteComponent,
+    canActivate: [loginGuard, rolVigilante]
+}
+,{
+    title: 'Historial',
+    path: 'historial',
+    component: HistorialComponent,
     canActivate: [loginGuard, rolVigilante]
 }
 ];

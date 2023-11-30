@@ -3,13 +3,15 @@
 }
 
 #sidemenu {
-
+    position: fixed;
+    top: 80px;
+    left: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-content: space-between;
     background-color: white;
-    width: 100%;
+    width: 20%;
     height: 90vh;
     border-right: 2px solid #969faa70;
 }

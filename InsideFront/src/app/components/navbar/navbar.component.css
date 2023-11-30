@@ -1,5 +1,6 @@
 #profile {
     position: fixed;
+    top: 0;
     width: 100vw;
     z-index: 1;
     border-bottom: 2px solid #969faa70;
@@ -8,8 +9,7 @@
     justify-content: space-between;
     padding: 0 20px;
     background-color: white;
-    height: 5%;
-
+    height: 80px
 }
 
 

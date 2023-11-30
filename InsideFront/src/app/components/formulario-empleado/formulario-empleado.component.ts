@@ -30,7 +30,7 @@ export class FormularioEmpleadoComponent {
   form =  new FormGroup({
     cedula: new FormControl('', [Validators.required, Validators.pattern(this.cedRegex)]),
     primerNombre: new FormControl('', [Validators.required, Validators.pattern(this.textRegex)]),
-    segundoNombre: new FormControl('', [Validators.required, Validators.pattern(this.textRegex)]),
+    segundoNombre: new FormControl('', [Validators.pattern(this.textRegex)]),
     primerApellido: new FormControl('', [Validators.required, Validators.pattern(this.textRegex)]),
     segundoApellido: new FormControl('', [Validators.required, Validators.pattern(this.textRegex)]),
     telefono: new FormControl('', [Validators.required, Validators.pattern(this.telRegex)]),
@@ -55,13 +55,6 @@ export class FormularioEmpleadoComponent {
       this.operacion = 'Editar '
       //this.getEmpleado(this.id)
     }
-  }
-
-  async crearPersona(Persona: Persona){
-    
-    this._PersonaService.agregar(Persona).subscribe({
-
-      })
   }
 
   async CUEmpleado(){
@@ -103,10 +96,6 @@ export class FormularioEmpleadoComponent {
         this.toastr.error(`No se pudo Actualizar la Persona: Asegurese de ingresar los datos Adecuadamente`, 'Error Actualizando Persona')
       }
     })
-
-      
-
-
     } else {  //crear
       await this._PersonaService.agregar(Persona).subscribe({
         next: () => {

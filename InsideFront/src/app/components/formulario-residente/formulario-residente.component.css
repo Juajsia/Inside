@@ -7,8 +7,8 @@ h1 {
 }
 
 section {
-    background: rgb(255, 246, 77);
-    background: linear-gradient(90deg, rgba(255, 246, 77, 1) 0%, rgba(90, 167, 200, 1) 70%);
+    background: rgb(187, 187, 166);
+    background: linear-gradient(180deg, rgba(187, 187, 166, 1) 0%, rgba(223, 220, 213, 1) 35%, rgba(55, 80, 135, 1) 100%);
     margin: 0;
     display: flex;
     justify-content: center;
@@ -21,7 +21,7 @@ section {
 .from-container {
     border: 1px solid rgba(0, 0, 0, 0.459);
     padding: 10px;
-    background-color: #f7f7f78a;
+    background-color: #f7f7f73d;
     border-radius: 10px;
     padding: 20px;
     text-align: center;
@@ -44,7 +44,7 @@ form {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     gap: 40px;
 }
 
@@ -62,21 +62,32 @@ form+p {
 
 
 input,
-button,select{
+button,
+textarea,
+select {
     border: unset;
     border-radius: 4px;
     padding: 15px 30px;
     font-size: large;
 }
 
-input,select {
+input,
+select {
     background-color: #f7f7f700;
     border-bottom: 1px solid #4e4f5183;
     border-radius: 5px;
     min-width: 400px;
 }
 
+textarea {
+    resize: none;
+    background-color: #f7f7f700;
+    border: 1px solid #4e4f5183;
+    border-radius: 5px;
+}
+
 .botones {
+    grid-column: 1 / -1;
     display: flex;
     justify-content: center;
     gap: 20px;

@@ -30,21 +30,21 @@ create table persona(
 );
 
 create table empleado(
-	cedula INT NOT NULL UNIQUE primary key,
+	cedula BIGINT UNSIGNED NOT NULL UNIQUE primary key,
 	rol VARCHAR(20),
     observaciones TEXT NULL,
     direccion VARCHAR(50) NULL
 );
 
 create table residente(
-	cedula INT NOT NULL UNIQUE primary key,
+	cedula BIGINT UNSIGNED NOT NULL UNIQUE primary key,
     apartamento varchar(20) NULL,
     torre VARCHAR(30) NULL
 );	
 
 create table vehiculo(
 	placa VARCHAR(10) NOT NULL UNIQUE primary key,
-    cedulaDuenio INT NOT NULL UNIQUE
+    cedulaDuenio BIGINT UNSIGNED NOT NULL UNIQUE
 );
 
 create table noticia (
@@ -64,7 +64,7 @@ create table movimiento(
 );
 
 create table persona_movimiento(
-	cedulaPersona INT NOT NULL,
+	cedulaPersona BIGINT UNSIGNED NOT NULL,
     idMovimiento  INT NOT NULL,
     primary key(cedulaPersona, idMovimiento)
 );

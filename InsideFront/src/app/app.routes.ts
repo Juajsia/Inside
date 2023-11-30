@@ -7,6 +7,7 @@ import { EmpleadoComponent } from './pages/empleado/empleado.component';
 import { FormularioEmpleadoComponent } from './components/formulario-empleado/formulario-empleado.component';
 import { ResidenteComponent } from './pages/residente/residente.component';
 import { HistorialComponent } from './pages/historial/historial.component';
+import { FormularioResidenteComponent } from './components/formulario-residente/formulario-residente.component';
 
 export const routes: Routes = [{
     title: 'Login',
@@ -32,12 +33,16 @@ export const routes: Routes = [{
     path: 'empleados/formulario/:id',
     component: FormularioEmpleadoComponent,
     canActivate: [loginGuard, rolAdmin]
-}
-,{
+},{
     title: 'Residente',
     path: 'residentes',
     component: ResidenteComponent,
     canActivate: [loginGuard, rolVigilante]
+},{
+    title: 'FomularioResidente',
+    path: 'residentes/formulario/:id',
+    component: FormularioResidenteComponent,
+    canActivate: [loginGuard, rolAdmin]
 }
 ,{
     title: 'Historial',

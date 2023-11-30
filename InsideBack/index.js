@@ -11,6 +11,7 @@ import { createEmpleadoRouter } from './routes/empleadoRouter.js'
 import { createVehiculoRouter } from './routes/vehiculoRouter.js'
 import { createMovimientoRouter } from './routes/movimientoRouter.js'
 import { createNoticiaRouter } from './routes/noticiaRouter.js'
+import { createResidenteRouter } from './routes/residenteRouter.js'
 
 // models
 import { PersonModel } from './models/personModel.js'
@@ -18,6 +19,7 @@ import { EmpleadoModel } from './models/empleadoModel.js'
 import { VehiculoModel } from './models/vehiculoModel.js'
 import { MovimientoModel } from './models/movimientoModel.js'
 import { NoticiaModel } from './models/noticiaModel.js'
+import { ResidenteModel } from './models/residenteModel.js'
 
 const app = express()
 app.use(cors())
@@ -28,6 +30,7 @@ app.use('/api/empleado', validateToken, validateRolToken(['Administrador']), cre
 app.use('/api/vehiculo', validateToken, validateRolToken(['Administrador']), createVehiculoRouter({ VehiculoModel }))
 app.use('/api/movimiento', validateToken, validateRolToken(['Administrador', 'Vigilante']), createMovimientoRouter({ MovimientoModel }))
 app.use('/api/noticia', validateToken, validateRolToken(['Administrador']), createNoticiaRouter({ NoticiaModel }))
+app.use('/api/residente', validateToken, validateRolToken(['Administrador', 'Vigilante']), createResidenteRouter({ ResidenteModel }))
 
 const PORT = 1234 ?? process.env.PORT
 app.listen(PORT, () => {

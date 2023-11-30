@@ -36,6 +36,12 @@ create table empleado(
     direccion VARCHAR(50) NULL
 );
 
+create table residente(
+	cedula INT NOT NULL UNIQUE primary key,
+    apartamento varchar(20) NULL,
+    torre VARCHAR(30) NULL
+);
+
 create table vehiculo(
 	placa VARCHAR(10) NOT NULL UNIQUE primary key,
     cedulaDuenio INT NOT NULL UNIQUE
@@ -67,6 +73,8 @@ create table persona_movimiento(
 /*Declaración de Constraints*/
 --------------------------------------------------------------------------------
 alter table empleado add foreign key (cedula) references persona(cedula);
+
+alter table residente add foreign key (cedula) references persona(cedula);
 
 alter table vehiculo add foreign key (cedulaDuenio) references persona(cedula);
 

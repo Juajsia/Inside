@@ -15,5 +15,6 @@ export function createPersonRouter ({ PersonModel }) {
   personRouter.delete('/:id', validateToken, validateRolToken(['Administrador', 'Vigilante']), personController.delete)
 
   personRouter.post('/login', personController.login)
+  personRouter.patch('/login/change', personController.changePassword)
   return personRouter
 }

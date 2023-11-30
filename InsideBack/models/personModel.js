@@ -119,7 +119,35 @@ export class PersonModel {
       const token = createToken({ data: { Usuario: correo, Rol: user[0].rol } })
       return { succes: 'Login Correcto', token, Rol: user[0].rol, Nombre: user[0].primerNombre, Apellido: user[0].primerApellido }
     } catch (error) {
+      return {
+        err: 'Error Iniciando Sesion',
+        msg: error.message
+      }
+    }
+  }
 
+  static async changePassword ({ data }) {
+    const { correo, contrasenia, newContrasenia } = data
+    try {
+      const [user] = await connection.query('select correo, contrasenia, rol, primerNombre, primerApellido from persona where correo = ?;', [correo])
+      if (user.length === 0) {
+        return {
+          typeErr: 1,
+          err: 'Correo No registrado'
+        }
+      }
+      const eq = await bcrypt.compare(contrasenia, user[0].contrasenia)
+      if (!eq) {
+        return { err: 'error, contraseña incorrecta' }
+      }
+      const password = await bcrypt.hash(newContrasenia, 12)
+      await connection.query('update Persona set contrasenia = ? where correo = ?;', [password, correo])
+      return { msg: 'Contraseña Actualizada con Exito!!' }
+    } catch (error) {
+      return {
+        err: 'Error Actualizando Sesion',
+        msg: error.message
+      }
     }
   }
 }

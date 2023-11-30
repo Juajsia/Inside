@@ -10,9 +10,9 @@
                 @if (listEmpleado.length !== 0 && !buscar) {
                 <button class="btn" (click)="Buscar()"><fa-icon [icon]="lupa"></fa-icon> Buscar</button>
                 }
-                <button class="btn" (click)="mostrarForm(0)" id="add"><fa-icon [icon]="faPlus"></fa-icon> Publicar
-                    Noticia</button>
-            </div>
+                <button class="btn" (click)="mostrarForm(0)" id="add"><fa-icon [icon]="faPlus"></fa-icon> Agregar
+                   Empleado </button>
+                </div>
         </section>
         @if (buscar) {
         <section class="busqueda">

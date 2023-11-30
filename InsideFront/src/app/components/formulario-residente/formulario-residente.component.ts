@@ -67,7 +67,7 @@ export class FormularioResidenteComponent {
       segundoApellido: this.form.value.segundoApellido!,
       cedula: Number(this.form.value.cedula!),
       telefono: this.form.value.telefono!,
-      rol: 'Empleado',
+      rol: 'Residente',
       correo: this.form.value.correo!,
       contrasenia: this.form.value.contrasenia!
     }

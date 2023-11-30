@@ -8,7 +8,7 @@ const personSchema = z.object({
   segundoNombre: z.string().nullable(),
   primerApellido: z.string(),
   segundoApellido: z.string(),
-  telefono: z.number().int().positive(),
+  telefono: z.string(),
   rol: z.string()
 })
 

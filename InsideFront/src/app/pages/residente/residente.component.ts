@@ -4,7 +4,7 @@ import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { MenulateralComponent } from '../../components/menulateral/menulateral.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
-import { faTrash, faPenToSquare, faPlus, faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faPenToSquare, faPlus, faMagnifyingGlass, faXmark} from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Residente } from '../../interfaces/residente';
@@ -22,6 +22,7 @@ export class ResidenteComponent {
   faPenToSquare = faPenToSquare
   faPlus = faPlus
   lupa = faMagnifyingGlass
+  cerrar = faXmark
   buscar = false
   listResidentes: Residente[] = []
   copilist: Residente[] = []
@@ -48,7 +49,7 @@ export class ResidenteComponent {
   }
 
   mostrarForm(id: number){
-    //this.router.navigate([`Empleado/formulario/${id}`])
+    this.router.navigate([`residentes/formulario/${id}`])
   }
 
   eliminarResidente(id:number, nombre: string) {

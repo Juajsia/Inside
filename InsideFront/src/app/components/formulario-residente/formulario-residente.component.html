@@ -2,66 +2,80 @@
     <article>
         <div class="from-container">
             <h1>{{operacion}} Residente</h1>
-            <form [formGroup]="form" id="form" action="/login" method="post" (ngSubmit)="CUPersona()">
+            <form [formGroup]="form" id="form" (ngSubmit)="CUResidente()">
                 <div class="inputs">
                     <div class="group">
                         <label for="cedula" class="form-input">Cedula:</label>
                         <input formControlName="cedula" type="number" id="cedula" class="form-input"
                             placeholder="Ingrese la Cedula" required>
-                            @if (form.get('cedula')?.hasError('required') &&
-                            form.get('cedula')?.touched) {
-                            <span>*Campo requerido*</span>
-                            } 
+                        @if (form.get('cedula')?.hasError('required') &&
+                        form.get('cedula')?.touched) {
+                        <span>*Campo requerido*</span>
+                        }
                         <label for="correo" class="form-input">Correo:</label>
                         <input formControlName="correo" type="text" id="correo" class="form-input"
                             placeholder="Ingrese el correo" required>
-                            @if (form.get('correo')?.hasError('required') &&
-                            form.get('correo')?.touched) {
-                            <span>*Campo requerido*</span>
-                            } 
+                        @if (form.get('correo')?.hasError('required') &&
+                        form.get('correo')?.touched) {
+                        <span>*Campo requerido*</span>
+                        }
+                        @if (operacion === 'Agregar ') {
                         <label for="contrasenia" class="form-input">Contraseña :</label>
                         <input formControlName="contrasenia" type="text" id="contrasenia" class="form-input"
                             placeholder="Ingrese la Contraseña" required>
 
-                            @if (form.get('contrasenia')?.hasError('required') &&
-                            form.get('contrasenia')?.touched) {
-                            <span>*Campo requerido*</span>
-                            } 
-                        <label for="1ernombre" class="form-input">Primer Nombre:</label>
-                        <input formControlName="1ernombre" type="text" id="1ernombre" class="form-input"
+                        @if (form.get('contrasenia')?.hasError('required') &&
+                        form.get('contrasenia')?.touched) {
+                        <span>*Campo requerido*</span>
+                        }
+                        }
+                        <label for="primerNombre" class="form-input">Primer Nombre:</label>
+                        <input formControlName="primerNombre" type="text" id="primerNombre" class="form-input"
                             placeholder="Ingrese el primer Nombre" required>
-                            @if (form.get('1ernombre')?.hasError('required') &&
-                            form.get('1ernombre')?.touched) {
-                            <span>*Campo requerido*</span>
-                            } 
-
+                        @if (form.get('primerNombre')?.hasError('required') &&
+                        form.get('primerNombre')?.touched) {
+                        <span>*Campo requerido*</span>
+                        }
+                        <label for="segundoNombre" class="form-input">Segundo Nombre(Opcional):</label>
+                        <input formControlName="segundoNombre" type="text" id="segundoNombre" class="form-input"
+                            placeholder="Ingrese el segundo Nombre" required>
                     </div>
                     <div class="group">
-                        <label for="2donombre" class="form-input">Segundo Nombre(Opcional):</label>
-                        <input formControlName="2donombre" type="text" id="2donombre" class="form-input"
-                            placeholder="Ingrese el segundo Nombre" required>
-
-                        <label for="1erapellido" class="form-input">Primer Apellido:</label>
-                        <input formControlName="1erapellido" type="text" id="1erapellido" class="form-input"
+                        <label for="primerApellido" class="form-input">Primer Apellido:</label>
+                        <input formControlName="primerApellido" type="text" id="primerApellido" class="form-input"
                             placeholder="Ingrese el primer Apellido" required>
-                            @if (form.get('1erapellido')?.hasError('required') &&
-                            form.get('1erapellido')?.touched) {
-                            <span>*Campo requerido*</span>
-                            } 
-                        <label for="2doapellido" class="form-input">Segundo Apellido:</label>
-                        <input formControlName="2doapellido" type="text" id="2doapellido" class="form-input"
-                        placeholder="Ingrese el segundo apellido" required>
-                        @if (form.get('2doapellido')?.hasError('required') &&
-                        form.get('2doapellido')?.touched) {
+                        @if (form.get('primerApellido')?.hasError('required') &&
+                        form.get('primerApellido')?.touched) {
                         <span>*Campo requerido*</span>
-                        } 
+                        }
+                        <label for="segundoApellido" class="form-input">Segundo Apellido:</label>
+                        <input formControlName="segundoApellido" type="text" id="segundoApellido" class="form-input"
+                            placeholder="Ingrese el segundo apellido" required>
+                        @if (form.get('segundoApellido')?.hasError('required') &&
+                        form.get('segundoApellido')?.touched) {
+                        <span>*Campo requerido*</span>
+                        }
                         <label for="telefono" class="form-input">Telefono:</label>
                         <input formControlName="telefono" type="text" id="telefono" class="form-input"
                             placeholder="Ingrese el Telefono" required>
-                            @if (form.get('telefono')?.hasError('required') &&
-                            form.get('telefono')?.touched) {
-                            <span>*Campo requerido*</span>
-                            } 
+                        @if (form.get('telefono')?.hasError('required') &&
+                        form.get('telefono')?.touched) {
+                        <span>*Campo requerido*</span>
+                        }
+                        <label for="torre" class="form-input">Torre:</label>
+                        <input formControlName="torre" type="text" id="torre" class="form-input"
+                            placeholder="Ingrese el torre" required>
+                        @if (form.get('torre')?.hasError('required') &&
+                        form.get('torre')?.touched) {
+                        <span>*Campo requerido*</span>
+                        }
+                        <label for="apartamento" class="form-input">Apartamento:</label>
+                        <input formControlName="apartamento" type="text" id="apartamento" class="form-input"
+                            placeholder="Ingrese el apartamento" required>
+                        @if (form.get('apartamento')?.hasError('required') &&
+                        form.get('apartamento')?.touched) {
+                        <span>*Campo requerido*</span>
+                        }
 
                     </div>
                 </div>

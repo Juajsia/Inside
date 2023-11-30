@@ -23,6 +23,8 @@
                     placeholder="Ingrese la cedula del dueño">
                 <button (click)="filtrarResidente()" class="btn" type="button"><fa-icon [icon]="lupa"></fa-icon>
                     Buscar</button>
+                <button (click)="getResidentes()" (click)="buscar=false" class="btn" id="cerrarBuscar" type="button">
+                    <fa-icon [icon]="cerrar"></fa-icon> Cerrar búsqueda</button>
             </form>
         </section>
         }

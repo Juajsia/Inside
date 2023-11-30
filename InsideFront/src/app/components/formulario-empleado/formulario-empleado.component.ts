@@ -57,13 +57,6 @@ export class FormularioEmpleadoComponent {
     }
   }
 
-  async crearPersona(Persona: Persona){
-    
-    this._PersonaService.agregar(Persona).subscribe({
-
-      })
-  }
-
   async CUEmpleado(){
     const Persona: Persona = {
       primerNombre: this.form.value.primerNombre!,
@@ -103,10 +96,6 @@ export class FormularioEmpleadoComponent {
         this.toastr.error(`No se pudo Actualizar la Persona: Asegurese de ingresar los datos Adecuadamente`, 'Error Actualizando Persona')
       }
     })
-
-      
-
-
     } else {  //crear
       await this._PersonaService.agregar(Persona).subscribe({
         next: () => {

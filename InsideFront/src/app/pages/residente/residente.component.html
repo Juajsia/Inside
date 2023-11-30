@@ -22,7 +22,7 @@
             <form action="" id="form-buscar">
                 <!-- <input type="text" name="nombre" class="params" placeholder="Ingrese el nombre"> -->
                 <input [(ngModel)]="filtarCed" type="number" name="cedula" class="params"
-                    placeholder="Ingrese la cedula del dueño">
+                    placeholder="Ingrese la cedula del residente">
                 <button (click)="filtrarResidente()" class="btn" type="button"><fa-icon [icon]="lupa"></fa-icon>
                     Buscar</button>
                 <button (click)="getResidentes()" (click)="buscar=false" class="btn" id="cerrarBuscar" type="button">

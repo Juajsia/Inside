@@ -1,0 +1,40 @@
+<section>
+    <article>
+        <div class="from-container">
+            <h1>{{operacion}} Noticia</h1>
+            <form [formGroup]="form" (ngSubmit)="CUNoticia()" id="form">
+                <div class="inputs">
+                    <div class="group">
+                        <label for="nombre" class="form-input">Título:</label>
+                        <input formControlName="titulo" type="text" id="titulo" class="form-input"
+                            placeholder="Ingrese el titulo" required>
+                        @if (form.get('titulo')?.hasError('required') && form.get('titulo')?.touched) {
+                        <span>*Campo requerido*</span>
+                        }
+                        <label for="linkImg" class="form-input">Imagen:</label>
+                        <input formControlName="linkImg" type="text" id="linkImg" class="form-input"
+                            placeholder="Ingrese la url de la imagen" required>
+                        @if (form.get('linkImg')?.hasError('required') && form.get('linkImg')?.touched) {
+                        <span>*Campo requerido*</span>
+                        }
+                    </div>
+                    <div class="group">
+                        <label for="descripcion" class="form-input">Descripción:</label>
+                        <textarea formControlName="descripcion" id="descripcion" name="descripcion" rows="15" cols="50"
+                            required placeholder="Ingrese la descripción" maxlength="1000">
+                        </textarea>
+                        @if (form.get('descripcion')?.hasError('required') && form.get('descripcion')?.touched) {
+                        <span>*Campo requerido*</span>
+                        }
+                    </div>
+                </div>
+                <div class="botones">
+                    <button class="btn" id="cancel" (click)="volver()"><fa-icon [icon]="cancelar"></fa-icon> Cancelar
+                    </button>
+                    <button [disabled]="form.invalid" type="submit" class="btn" id="save"><fa-icon
+                            [icon]="guardar"></fa-icon> Guardar </button>
+                </div>
+            </form>
+        </div>
+    </article>
+</section>

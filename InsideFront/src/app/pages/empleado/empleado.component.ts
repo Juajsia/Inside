@@ -48,7 +48,7 @@ export class EmpleadoComponent {
   }
 
   mostrarForm(id: number){
-    //this.router.navigate([`Noticia/formulario/${id}`])
+    //this.router.navigate([`Empleado/formulario/${id}`])
   }
 
   eliminarEmpleado(id:number, nombre: string) {

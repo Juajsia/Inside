@@ -82,7 +82,7 @@ export class NoticiaModel {
       } else {
         const noticiaAct = { ...noticia[0], ...data }
         const { titulo, linkImg, descripcion } = noticiaAct
-        await connection.query('update noticia set titulo = ?, linkImg = ?, descripcion = ?;', [titulo, linkImg, descripcion])
+        await connection.query('update noticia set titulo = ?, linkImg = ?, descripcion = ? where id = ?;', [titulo, linkImg, descripcion, id])
         return { msg: 'noticia actualizado con exito' }
       }
     } catch (error) {

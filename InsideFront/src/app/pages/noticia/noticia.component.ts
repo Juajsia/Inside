@@ -55,4 +55,18 @@ export class NoticiaComponent {
     })
   }
 
+  FormatoFecha(fechaISO: string): string {
+    const fecha = new Date(fechaISO);
+    const formatoDeseado: Intl.DateTimeFormatOptions = {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      timeZone: 'America/New_York',
+    };
+  
+    return fecha.toLocaleString('es-ES', formatoDeseado);
+  }
 }

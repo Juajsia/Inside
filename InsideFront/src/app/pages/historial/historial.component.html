@@ -1,1 +1,58 @@
-<p>historial works!</p>
+<app-navbar></app-navbar>
+
+<div class="container">
+    <div class="menu"><app-menulateral></app-menulateral></div>
+
+    <main class="contenido">
+        <section class="acciones">
+            <h2 id="titulo">Historial</h2>
+            <div>
+                <form action="" id="form-buscar">
+                    <!-- <input type="text" name="nombre" class="params" placeholder="Ingrese el nombre"> -->
+                    <input [(ngModel)]="filtarCed" type="number" name="cedula" class="params"
+                        placeholder="Ingrese la cedula del dueño">
+                    <button (click)="filtrarMovimiento()" class="btn" type="button"><fa-icon [icon]="lupa"></fa-icon>
+                        Buscar</button>
+                </form>
+            </div>
+        </section>
+        @if (listMovimientos.length !== 0) {
+        <section class="contenido">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Cedula</th>
+                        <th>Fecha/Hora</th>
+                        <th>Portería</th>
+                        <th>Placa</th>
+                        <th>E/S</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (item of listMovimientos; track item.id) {
+                    <tr>
+                        <td>{{item.nombre}}</td>
+                        <td>{{item.cedula}}</td>
+                        <td>{{FormatoFecha(item.fecha)}}</td>
+                        <td>{{item.porteria}}</td>
+                        <td>{{item.placa}}</td>
+                        <td class="ultTd">{{item.tipo}}</td>
+
+                        <div class="btns">
+                            <!-- Nota: funcion eliminar removida -->
+                            <button class="Delete" (click)="eliminarMovimiento(item.id!)">
+                                <fa-icon [icon]="faTrash"></fa-icon> Eliminar
+                            </button>
+                        </div>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </section>
+        }@else {
+        <h3>No hay Movimientos Registrados</h3>
+        }
+
+    </main>
+</div>

@@ -1,11 +1,7 @@
-export interface residente{
+export interface Residente{
+    nombre?: string,
     cedula: number,
-    correo:string,
-    contrasenia:string,
-    primerNombre:string,
-    segundoNombre:string,
-    primerApellido:string,
-    segundoApellido:string,
-    telefono:string,
-    rol:string
+    apartamento: string,
+    torre: string,
+    telefono?:string,
 }

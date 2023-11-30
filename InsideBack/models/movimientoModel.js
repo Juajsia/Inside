@@ -53,7 +53,6 @@ export class MovimientoModel {
       const fecha = nuevaHora()
       await connection.query('insert into movimiento (fecha, porteria, tipo, placa) values(?, ?, ?, ?);', [fecha, porteria, tipo, placa])
       const [movimiento] = await connection.query('select * from movimiento where fecha = ?;', [fecha])
-      console.log(movimiento)
       await connection.query('insert into persona_movimiento (cedulaPersona, idMovimiento) values(?, ?)', [cedulaPersona, movimiento[0].id])
       return { msg: 'Movimiento registrado con exito' }
     } catch (error) {

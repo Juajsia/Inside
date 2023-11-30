@@ -1,1 +1,69 @@
-<p>residente works!</p>
+<app-navbar></app-navbar>
+
+<div class="container">
+    <div class="menu"><app-menulateral></app-menulateral></div>
+
+    <main class="contenido">
+        <section class="acciones">
+            <h2 id="titulo">Residentes</h2>
+            <div>
+                @if (listResidentes.length !== 0 && !buscar) {
+                <button class="btn" (click)="Buscar()"><fa-icon [icon]="lupa"></fa-icon> Buscar</button>
+                }
+                <button class="btn" (click)="mostrarForm(0)" id="add"><fa-icon [icon]="faPlus"></fa-icon> Agregar
+                    Residente</button>
+            </div>
+        </section>
+        @if (buscar) {
+        <section class="busqueda">
+            <!-- Nota: Funciones de filtrado removidas -->
+            <form action="" id="form-buscar">
+                <!-- <input type="text" name="nombre" class="params" placeholder="Ingrese el nombre"> -->
+                <input [(ngModel)]="filtarCed" type="number" name="cedula" class="params"
+                    placeholder="Ingrese la cedula del dueño">
+                <button (click)="filtrarResidente()" class="btn" type="button"><fa-icon [icon]="lupa"></fa-icon>
+                    Buscar</button>
+            </form>
+        </section>
+        }
+        @if (listResidentes.length !== 0) {
+        <section class="contenido">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Cédula</th>
+                        <th>Torre</th>
+                        <th>Apartamento</th>
+                        <th>Teléfono</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (item of listResidentes; track item.cedula) {
+                    <tr>
+                        <td>{{item.nombre}}</td>
+                        <td>{{item.cedula}}</td>
+                        <td>{{item.torre}}</td>
+                        <td>{{item.apartamento}}</td>
+                        <td class="ultTd">{{item.telefono}}</td>
+
+                        <div class="btns">
+                            <button class="Edit" (click)="mostrarForm(item.cedula!)">
+                                <fa-icon [icon]="faPenToSquare"></fa-icon> Editar
+                            </button>
+                            <!-- Nota: funcion eliminar removida -->
+                            <button class="Delete" (click)="eliminarResidente(item.cedula!, item.nombre!)">
+                                <fa-icon [icon]="faTrash"></fa-icon> Eliminar
+                            </button>
+                        </div>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </section>
+        }@else {
+        <h3>No hay Residentes Registrados</h3>
+        }
+
+    </main>
+</div>

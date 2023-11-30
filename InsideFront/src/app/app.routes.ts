@@ -1,10 +1,12 @@
 import { Routes } from '@angular/router';
 import { NoticiaComponent } from './pages/noticia/noticia.component';
 import { LoginComponent } from './pages/login/login.component';
-import { loginGuard, rolAdmin } from './guards/login.guard';
+import { loginGuard, rolAdmin, rolVigilante } from './guards/login.guard';
 import { FormularioNoticiaComponent } from './components/formulario-noticia/formulario-noticia.component';
 import { EmpleadoComponent } from './pages/empleado/empleado.component';
 import { FormularioEmpleadoComponent } from './components/formulario-empleado/formulario-empleado.component';
+import { ResidenteComponent } from './pages/residente/residente.component';
+import { HistorialComponent } from './pages/historial/historial.component';
 
 export const routes: Routes = [{
     title: 'Login',
@@ -30,5 +32,17 @@ export const routes: Routes = [{
     path: 'empleados/formulario/:id',
     component: FormularioEmpleadoComponent,
     canActivate: [loginGuard, rolAdmin]
+}
+,{
+    title: 'Residente',
+    path: 'residentes',
+    component: ResidenteComponent,
+    canActivate: [loginGuard, rolVigilante]
+}
+,{
+    title: 'Historial',
+    path: 'historial',
+    component: HistorialComponent,
+    canActivate: [loginGuard, rolVigilante]
 }
 ];

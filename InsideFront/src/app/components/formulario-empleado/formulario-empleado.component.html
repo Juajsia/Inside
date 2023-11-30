@@ -2,7 +2,7 @@
     <article>
         <div class="from-container">
             <h1>{{operacion}} Empleado</h1>
-            <form [formGroup]="form" id="form" action="/login" method="post" (ngSubmit)="CUEmpleado()">
+            <form [formGroup]="form" id="form" (ngSubmit)="CUEmpleado()">
                 <div class="inputs">
                     <div class="group">
                         <label for="cedula" class="form-input">Cedula:</label>
@@ -20,6 +20,7 @@
                         form.get('correo')?.touched) {
                         <span>*Campo requerido*</span>
                         }
+                        @if (operacion == 'Agregar ') {
                         <label for="contrasenia" class="form-input">Contraseña :</label>
                         <input formControlName="contrasenia" type="password" id="contrasenia" class="form-input"
                             placeholder="Ingrese la Contraseña" required>
@@ -28,6 +29,8 @@
                         form.get('contrasenia')?.touched) {
                         <span>*Campo requerido*</span>
                         }
+                        }
+
                         <label for="1ernombre" class="form-input">Primer Nombre:</label>
                         <input formControlName="primerNombre" type="text" id="primerNombre" class="form-input"
                             placeholder="Ingrese el primer Nombre" required>
@@ -77,15 +80,14 @@
                         <label for="direccion" class="form-input">Direccion:</label>
                         <input formControlName="direccion" type="text" id="primerApellido" class="form-input"
                             placeholder="Ingrese el primer Apellido" required>
-
-                        <label for="observaciones" class="form-input">Observaciones:</label>
-                        <textarea formControlName="observaciones" name="observaciones" id="observaciones" cols="30"
-                            rows="10" placeholder="Ingrese observaciones"></textarea>
-
                         @if (form.get('direccion')?.hasError('required') &&
                         form.get('direccion')?.touched) {
                         <span>*Campo requerido*</span>
                         }
+                        <label for="observaciones" class="form-input">Observaciones:</label>
+                        <textarea formControlName="observaciones" name="observaciones" id="observaciones" cols="30"
+                            rows="10" placeholder="Ingrese observaciones"></textarea>
+
 
                     </div>
                 </div>

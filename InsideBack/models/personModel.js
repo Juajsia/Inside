@@ -90,9 +90,8 @@ export class PersonModel {
         return { err: 'usuario no está registrado' }
       } else {
         const usuarioAct = { ...person[0], ...data }
-        const { correo, contrasenia, primerNombre, segundoNombre, primerApellido, segundoApellido, telefono, rol } = usuarioAct
-        const password = await bcrypt.hash(contrasenia, 12)
-        await connection.query('update Persona set correo = ?, contrasenia = ?, primerNombre = ?, segundoNombre = ?, primerApellido = ?, segundoApellido = ?, telefono = ?, rol = ? where cedula = ?;', [correo, password, primerNombre, segundoNombre, primerApellido, segundoApellido, telefono, rol, id])
+        const { correo, primerNombre, segundoNombre, primerApellido, segundoApellido, telefono, rol } = usuarioAct
+        await connection.query('update Persona set correo = ?, primerNombre = ?, segundoNombre = ?, primerApellido = ?, segundoApellido = ?, telefono = ?, rol = ? where cedula = ?;', [correo, primerNombre, segundoNombre, primerApellido, segundoApellido, telefono, rol, id])
         return { msg: 'usuario actualizado con exito' }
       }
     } catch (error) {

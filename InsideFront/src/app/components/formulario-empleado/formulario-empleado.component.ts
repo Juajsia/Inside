@@ -8,7 +8,7 @@ import { EmpleadoService } from '../../services/empleado.service';
 import { ToastrService } from 'ngx-toastr';
 import { Empleado } from '../../interfaces/empleado';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Persona } from '../../interfaces/persona';
+import { Persona, Persona2 } from '../../interfaces/persona';
 import { PersonaService } from '../../services/persona.service';
 
 @Component({
@@ -30,7 +30,7 @@ export class FormularioEmpleadoComponent {
   form =  new FormGroup({
     cedula: new FormControl('', [Validators.required, Validators.pattern(this.cedRegex)]),
     primerNombre: new FormControl('', [Validators.required, Validators.pattern(this.textRegex)]),
-    segundoNombre: new FormControl('', [Validators.required, Validators.pattern(this.textRegex)]),
+    segundoNombre: new FormControl('', [Validators.pattern(this.textRegex)]),
     primerApellido: new FormControl('', [Validators.required, Validators.pattern(this.textRegex)]),
     segundoApellido: new FormControl('', [Validators.required, Validators.pattern(this.textRegex)]),
     telefono: new FormControl('', [Validators.required, Validators.pattern(this.telRegex)]),
@@ -127,26 +127,32 @@ export class FormularioEmpleadoComponent {
   }
 
   // getEmpleado(id: number){
-  //   this._PersonaService.getById(id).subscribe()
+  //   let datos: Persona2
 
-
-  //   this._EmpleadoService.getById(id).subscribe((res: Empleado[]) => {
-  //     const data = res[0]
-  //     console.log(data)
-  //     const nombre = data.nombre?.split('')
-  //     this.form.setValue({
-  //       cedula: String(data.cedula),
-  //       primerNombre: nombre![0],
-  //       segundoNombre: nombre![1],
-  //       primerApellido: nombre![2],
-  //       segundoApellido: nombre![3],
-  //       telefono: data.telefono!,
-  //       observaciones: data.observaciones,
-  //       direccion: data.direccion,
-  //       correo: data.correo,
-  //       contrasenia: data.contrasena
+  //   this._PersonaService.getById(id).subscribe((res: Persona[]) => {
+  //     datos = res[0]
+  //     let datos2: Empleado
+  //     this._EmpleadoService.getById(id).subscribe((res: Empleado[]) => {
+  //       datos2 = res[0]
+  //       this.form.setValue({
+  //         cedula: String(datos.cedula),
+  //         primerNombre: datos.primerNombre,
+  //         segundoNombre: datos.segundoNombre,
+  //         primerApellido: datos.primerApellido,
+  //         segundoApellido: datos.segundoApellido,
+  //         telefono: datos.telefono,
+  //         correo: datos.correo,
+  //         observaciones: datos.observaciones,
+  //         direccion: datos.direccion,
+  //       })   
+        
   //     })
   //   })
+
+
+
+
+    
   // }
 
   volver(){
